@@ -15,3 +15,20 @@ android {
         }
     }
 }
+
+apply plugin: 'maven'
+
+version = '0.1.0'
+group = 'com.github.curioustechizen.ago'
+
+repoDir = 'file://' + rootProject.projectDir + '/repo/'
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: repoDir)
+        pom {
+            artifactId = 'Android-Ago-lib'
+        }
+    }
+}
+
