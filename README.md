@@ -23,6 +23,39 @@ Obtaining
 ###Maven Central
 This project is not available on Maven Central yet. Please follow #3 to know when this is done.
 
+### From Gradle
+If you are using [Gradle](http://www.gradle.org/) as your dependency manager, you can simply add [Android-Ago repository](https://github.com/macksuelsantos/android-ago/raw/master/repo) and its dependency in your `build.gradle` file, as the example below.
+
+```groovy
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+apply plugin: 'android'
+
+repositories {
+  maven { url 'https://github.com/macksuelsantos/android-ago/raw/master/repo' }
+}
+
+dependencies {
+  compile 'com.android.support:support-v4:19.0.1'
+  compile 'com.github.curioustechizen.ago:Android-Ago-lib:0.1.0'
+}
+
 
 Usage
 =====
